@@ -1,0 +1,52 @@
+{
+  "travelFees": [
+    {
+      "id": "13233",
+      "name": "hotel room",
+      "amount": 302.3,
+      "appliedBy": {
+        "id": "3343",
+        "name": "qiaoying",
+        "apartment": "NA",
+        "employeeId": 20000
+      },
+      "month": "2021/10"
+    },
+    {
+      "id": "23424",
+      "name": "Air tickets",
+      "amount": 3992,
+      "appliedBy": {
+        "id": "3345",
+        "name": "Nicole",
+        "apartment": "AU",
+        "employeeId": 10000
+      },
+      "month": "2021/10"
+    },
+    {
+      "id": "13232",
+      "name": "hotel room",
+      "amount": 892.3,
+      "appliedBy": {
+        "id": "3844",
+        "name": "Sammie",
+        "apartment": "TD",
+        "employeeId": 23994
+      },
+      "month": "2021/10"
+    },
+    {
+      "id": "23424",
+      "name": "Air tickets",
+      "amount": 3992,
+      "appliedBy": {
+        "id": "3345",
+        "name": "Nicole",
+        "apartment": "AU",
+        "employeeId": 10000
+      },
+      "month": "2020/12"
+    }
+  ]
+}

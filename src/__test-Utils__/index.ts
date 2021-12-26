@@ -4,3 +4,5 @@ export const simulate = (wrapper: CommonWrapper, customEvent: string, ...args: a
 	const eventHandler = wrapper.prop(customEvent) as (arg?: any[]) => void;
 	return eventHandler.call<null, any[], any>(null, ...args);
 };
+
+export const wait = (timeout: number) => new Promise((resolve) => setTimeout(resolve, timeout));

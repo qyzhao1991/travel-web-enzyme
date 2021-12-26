@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test enzyme should render success 1`] = `
+<Fragment>
+  <Header
+    style={
+      Object {
+        "color": "white",
+        "fontSize": 36,
+      }
+    }
+  >
+    Enterprise Travel Management System
+  </Header>
+  <Menu
+    mode="horizontal"
+    onClick={[Function]}
+    selectedKeys={
+      Array [
+        "home",
+      ]
+    }
+  >
+    <MenuItem
+      key="home"
+    >
+      Home Page
+    </MenuItem>
+    <MenuItem
+      key="travelFees"
+    >
+      Travel Fees
+    </MenuItem>
+    <MenuItem
+      key="accountManagement"
+    >
+      Account Management
+    </MenuItem>
+  </Menu>
+</Fragment>
+`;
+
+exports[`test enzyme should render travel fees component when click menu 1`] = `
+<Fragment>
+  <Header
+    style={
+      Object {
+        "color": "white",
+        "fontSize": 36,
+      }
+    }
+  >
+    Enterprise Travel Management System
+  </Header>
+  <Menu
+    mode="horizontal"
+    onClick={[Function]}
+    selectedKeys={
+      Array [
+        "home",
+      ]
+    }
+  >
+    <MenuItem
+      key="home"
+    >
+      Home Page
+    </MenuItem>
+    <MenuItem
+      key="travelFees"
+    >
+      Travel Fees
+    </MenuItem>
+    <MenuItem
+      key="accountManagement"
+    >
+      Account Management
+    </MenuItem>
+  </Menu>
+</Fragment>
+`;
