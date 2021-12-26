@@ -1,14 +1,18 @@
-import React from "react";
-import {Button, DatePicker, Table} from "antd";
-import {TravelFeeService} from "../services/travelFees";
-import moment from "moment";
-import {TravelFeeResponse, User} from "../dataModals/TravelFeeResponse";
+import React from 'react';
+import { Alert, Button, DatePicker, Table } from 'antd';
+import { TravelFeeService } from '../services/travelFees';
+import moment from 'moment';
+import { TravelFeeResponse, User } from '../dataModals/TravelFeeResponse';
 
 function TravelFees() {
 	const [selectedMonth, setSelectedMonth] = React.useState<string>();
 	const [responseData, setResponseData] = React.useState<TravelFeeResponse>();
+	const [showAlert, setShowAlert] = React.useState<boolean>(false);
 	
 	function handleClick() {
+		if (moment(selectedMonth).isSameOrAfter(moment(Date.now()))) {
+			return setShowAlert(true);
+		}
 		return selectedMonth ? TravelFeeService.getTravelFeesByDate(selectedMonth)
 				.then(response => setResponseData(response.data))
 				.catch(error => console.log('show error', error))
@@ -42,14 +46,17 @@ function TravelFees() {
 	return (
 		<>
 			<div>This is travel fees pages</div>
-			<DatePicker picker={'month'}
-									onChange={(date) => setSelectedMonth(`${moment(date).get('year')}/${moment(date).get('month') + 1}`)}/>
+			<DatePicker
+				picker={'month'}
+				onChange={(date) => setSelectedMonth(`${moment(date).get('year')}/${moment(date).get('month') + 1}`)}
+			/>
 			<Button
 				data-testid="buttonId"
 				onClick={handleClick}>
 				Confirm Selection
 			</Button>
-			{responseData && <Table dataSource={responseData} columns={columns} />}
+			{<Table dataSource={responseData} columns={columns}/>}
+			{showAlert && <Alert message={'can not select month later than today'}/>}
 		</>
 	)
 }
